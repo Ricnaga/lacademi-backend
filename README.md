@@ -57,7 +57,7 @@ Gostou? tem alguma sugestão de melhoria? por favor, entre em contato e ja aprov
 
 ## Licença
 <div align="center">
-<a href="https://img.shields.io/github/license/Ricnaga/lacademi-backend">
-<img src="https://img.shields.io/github/license/Ricnaga/lacademi-backend">
+<a href="https://img.shields.io/github/license/Ricnaga/lacademi-backend?style=for-the-badge">
+<img src="https://img.shields.io/github/license/Ricnaga/lacademi-backend?style=for-the-badge">
 </a>
 </div>

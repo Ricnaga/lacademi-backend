@@ -5,19 +5,18 @@ const planRouter = Router();
 
 const plansRepository = new PlansRepository();
 
-planRouter
-  .get('/show', (request, response) => {
-    const allGymPlans = plansRepository.all();
+planRouter.put('/update', (request, response) => {
+  const { services } = request.body;
 
-    return response.json(allGymPlans);
-  })
+  const updatedPlans = plansRepository.update(services);
 
-  .put('/update', (request, response) => {
-    const { services } = request.body;
+  return response.json({ updatedPlans });
+});
 
-    const plans = plansRepository.update(services);
+planRouter.get('/show', (request, response) => {
+  const allPlans = plansRepository.all();
 
-    return response.json(plans);
-  });
+  return response.json({ allPlans });
+});
 
 export default planRouter;

@@ -1,12 +1,12 @@
-interface ArrayObject {
+interface IPlans {
   workout: string;
   servicePackage: string;
 }
 
 export default class Plan {
-  servicePlans: Array<ArrayObject>;
+  servicePlans: Array<IPlans>;
 
-  constructor(allPlans: ArrayObject[]) {
+  constructor(allPlans: IPlans[]) {
     this.servicePlans = allPlans;
   }
 }

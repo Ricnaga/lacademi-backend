@@ -16,6 +16,7 @@
 #### 1. DDD: domain driven design
 #### 2. API REST
 #### 3. API: criação | atualização | listagem
+#### 3. SOLID: Single responsability | liskov substitution | dependency inversion
 #### 4. Swagger:documentação de API
 
 ## <div align="center"> Sumário </div>

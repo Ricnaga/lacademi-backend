@@ -1,0 +1,280 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API documentation",
+    "description": "Documentation about how API works",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Nome do usuário"
+    }
+  },
+  "paths": {
+    "/user": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create user",
+        "description": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "rg": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "services": {
+                    "type": "object",
+                    "properties": {
+                      "workout": {
+                        "type": "string"
+                      },
+                      "servicePackage": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "name": "Nome do usuário",
+                  "rg": "123456789",
+                  "address": "Endereço, 123",
+                  "email": "email@email.com",
+                  "services": [
+                    {
+                      "workout": "Jiujitsu",
+                      "servicePackage": "Individual"
+                    },
+                    {
+                      "workout": "Musculação",
+                      "servicePackage": "Basic"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Find by id",
+        "description": "Find a user with id on parameters",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "user that need to be found",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server"
+          }
+        }
+      }
+    },
+    "/user/{id}/update": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user",
+        "description": "Update user once found",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "user that need to be update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "rg": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "account": {
+                    "type": "boolean"
+                  },
+                  "services": {
+                    "type": "object",
+                    "properties": {
+                      "workout": {
+                        "type": "string"
+                      },
+                      "servicePackage": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "name": "Nome do usuário",
+                  "rg": "123456789",
+                  "address": "Endereço, 123",
+                  "account": false,
+                  "email": "email@email.com",
+                  "services": [
+                    {
+                      "workout": "Jiujitsu",
+                      "servicePackage": "Individual"
+                    },
+                    {
+                      "workout": "Karatê",
+                      "servicePackage": "Individual"
+                    },
+                    {
+                      "workout": "Musculação",
+                      "servicePackage": "Basic"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Updated"
+          },
+          "500": {
+            "description": "Internal Server"
+          }
+        }
+      }
+    },
+    "/plans": {
+      "put": {
+        "tags": [
+          "plans"
+        ],
+        "summary": "Update plans",
+        "description": "Update service plans",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "services": {
+                    "type": "object",
+                    "properties": {
+                      "workout": {
+                        "type": "string"
+                      },
+                      "servicePackage": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "services": [
+                    {
+                      "workout": "Krav magá",
+                      "servicePackage": "Individual"
+                    },
+                    {
+                      "workout": "Crossfit",
+                      "servicePackage": "Basic"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Updated"
+          },
+          "500": {
+            "description": "Internal Server"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "plans"
+        ],
+        "summary": "List plans",
+        "description": "List all plans",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "services": {
+                        "type": "object",
+                        "properties": {
+                          "workout": {
+                            "type": "string"
+                          },
+                          "servicePackage": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

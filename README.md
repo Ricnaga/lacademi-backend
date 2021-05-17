@@ -13,6 +13,7 @@
 ### <div align="center"> Projeto de criação própria abordando conceitos básicos sobre: </div>
 
 #### 1. Nodejs
+#### 1. DDD: domain driven design
 #### 2. API REST
 #### 3. API: criação | atualização | listagem
 #### 4. Swagger:documentação de API

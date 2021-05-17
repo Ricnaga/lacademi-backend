@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
-import ApiFile from './documentation/apidoc.json';
+import ApiFile from '../../documentation/apidoc.json';
 import routes from './routes';
 
 const server = express();

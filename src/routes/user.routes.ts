@@ -5,7 +5,7 @@ const userRouter = Router();
 
 const usersRepository = new UsersRepository();
 
-userRouter.post('/create', (request, response) => {
+userRouter.post('/', (request, response) => {
   const { name, rg, address, email, services } = request.body;
 
   const createdUser = usersRepository.create({
@@ -19,15 +19,16 @@ userRouter.post('/create', (request, response) => {
   return response.status(201).json({ createdUser });
 });
 
-userRouter.put('/find/:id', (request, response) => {
+userRouter.put('/:id', (request, response) => {
   const { id } = request.params;
 
   const foundUser = usersRepository.findById(id);
   return response.json({ foundUser });
 });
 
-userRouter.put('/update', (request, response) => {
-  const { id, name, rg, address, email, account, services } = request.body;
+userRouter.put('/:id/update', (request, response) => {
+  const { id } = request.params;
+  const { name, rg, address, email, account, services } = request.body;
 
   const updatedUser = usersRepository.update({
     id,

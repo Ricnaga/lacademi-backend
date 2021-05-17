@@ -5,7 +5,7 @@ const planRouter = Router();
 
 const plansRepository = new PlansRepository();
 
-planRouter.put('/update', (request, response) => {
+planRouter.put('/', (request, response) => {
   const { services } = request.body;
 
   const updatedPlans = plansRepository.update(services);
@@ -13,7 +13,7 @@ planRouter.put('/update', (request, response) => {
   return response.json({ updatedPlans });
 });
 
-planRouter.get('/show', (request, response) => {
+planRouter.get('/', (request, response) => {
   const allPlans = plansRepository.all();
 
   return response.json({ allPlans });

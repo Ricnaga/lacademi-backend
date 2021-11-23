@@ -12,12 +12,12 @@
 
 ### <div align="center"> Projeto de criação própria abordando conceitos básicos sobre: </div>
 
-#### 1. Nodejs
-#### 1. DDD: domain driven design
-#### 2. API REST
-#### 3. API: criação | atualização | listagem
-#### 3. SOLID: Single responsability | liskov substitution | dependency inversion
-#### 4. Swagger:documentação de API
+#### - Nodejs
+#### - DDD: domain driven design
+#### - API REST
+#### - API: criação | atualização | listagem
+#### - SOLID: Single responsability | liskov substitution | dependency inversion
+#### - Documentação de API com Swagger
 
 ## <div align="center"> Sumário </div>
 <!--ts-->
